@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int my_strlen(const char *s)
+float my_strlen(const char *s)
 {
    char *p = s;
 
