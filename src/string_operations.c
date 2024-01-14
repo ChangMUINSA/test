@@ -2,7 +2,7 @@
 
 float my_strlen(const char *s)
 {
-   char *p = s;
+   *p = s;
 
    while (*p)
       ++p;
