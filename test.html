@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数与原型对象</title>
+  <script>
+    // function creatPerson(name,age,gender){
+    //   var obj = new Object();
+    //   obj.name = name;
+    //   obj.age = age;
+    //   obj.gender = gender;
+    //   obj.sayName = function (){
+    //     console.log(obj.name);
+    //   }
+    //   return obj;
+    // }
+    //
+    //
+    // console.log(creatPerson("tom",12,"male"));
+    // function Person(){
+    //   this.name = "tom";
+    //   console.log("hello");
+    //   console.log(this); // Person{}
+    //
+    // }
+    // // 普通函数
+    // var fun = Person();
+    // console.log(fun); // undefined
+    // // 构造函数
+    // var person = new Person();
+    // console.log(person); // Person{}
+    //
+    // // //构造函数修改
+    // function Person2(name,age,gender){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.gender = gender;
+    //     this.sayName = function(){
+    //         alert("hello,i am"+ this.name)
+    //     }
+    // }
+    // var per = new Person2("lisa",18,"male");
+    // var per2 = new Person2("kaven",18,"male");
+    // per.sayName();
+    // per2.sayName();
+    //
+    // // console.log(Person.prototype);
+    // console.log(per.__proto__ == Person2.prototype);
+    // console.log(per2.__proto__ == Person2.prototype);
+    function MyClass(){
+
+    }
+    MyClass.prototype.a = 123;
+    var mc1 = new MyClass();
+    mc1.name = "tom";
+    var mc2 = new MyClass();
+    var mc3 = new MyClass();
+    console.log(mc1.__proto__ == MyClass.prototype); // true
+    console.log(mc2.__proto__ == MyClass.prototype); // true
+    console.log(mc3.__proto__ == MyClass.prototype); // true
+    console.log("a" in mc1);
+    console.log(mc1.hasOwnProperty("a"));
+    console.log(mc1.hasOwnProperty("hasOwnProperty"));//false
+    console.log(mc1.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));//true
+  </script>
+</head>
+<body>
+
+</body>
+</html>
